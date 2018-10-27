@@ -92,28 +92,28 @@ angular
     .directive('navMainbar', function () {
         return {
             restrict: 'E',
-            templateUrl: 'vendor/ng-navigation/partial/nav-mainbar.html'
+            templateUrl: 'vendor/@sismics/ng-navigation/partial/nav-mainbar.html'
         };
     })
     .directive('navOperation', function () {
         return {
             restrict: 'E',
-            templateUrl: 'vendor/ng-navigation/partial/nav-operation.html'
+            templateUrl: 'vendor/@sismics/ng-navigation/partial/nav-operation.html'
         };
     })
     .directive('navBreadcrumb', function() {
         return {
-            templateUrl: 'vendor/ng-navigation/partial/nav-breadcrumb.html'
+            templateUrl: 'vendor/@sismics/ng-navigation/partial/nav-breadcrumb.html'
         };
     })
     .directive('navProfile', function() {
         return {
-            templateUrl: 'vendor/ng-navigation/partial/nav-profile.html'
+            templateUrl: 'vendor/@sismics/ng-navigation/partial/nav-profile.html'
         }
     })
     .directive('navQuickInfo', function() {
         return {
-            templateUrl: 'vendor/ng-navigation/partial/nav-quick-info.html'
+            templateUrl: 'vendor/@sismics/ng-navigation/partial/nav-quick-info.html'
         }
     })
     .controller('Navigation', function($scope, $rootScope, $state, Navigation) {

@@ -1,6 +1,6 @@
 # ng-navigation
 
-This package provides an authentication system for AngularJS.
+This package provides an navigation system for AngularJS.
 
 # License
 
