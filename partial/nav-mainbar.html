@@ -1,0 +1,21 @@
+<div ng-controller="Navigation" id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <ul class="nav side-menu">
+            <li ng-if="user.check(module.read)" ng-repeat="module in modules" ng-class="{active: isActive(module)}">
+                <a ng-click="openModule(module.id)" ng-if="module.modules.length > 0"><i class="fas fa-fw {{::module.icon}}"></i> {{::module.label | translate}}
+                    <span class="pull-right fas fa-fw" ng-class="{'fa-chevron-up': isModuleOpen(module.id), 'fa-chevron-down': !isModuleOpen(module.id)}"></span></a>
+                <a ng-href="{{moduleHref(module)}}" ng-if="module.modules.length == 0"><i class="fas fa-fw {{::module.icon}}"></i> {{::module.label | translate}}</a>
+                <ul class="nav child_menu" ng-show="isModuleOpen(module.id)" ng-if="module.modules.length > 0">
+                    <li ng-repeat="submodule in module.modules" ng-if="user.check(submodule.read)" ng-class="{active: isActive(submodule)}">
+                        <a ng-href="{{submodule.modules != null ? '' : moduleHref(submodule)}}" ng-click="openModule(submodule.id)">{{::submodule.label | translate}} <span ng-class="{fas: submodule.modules, 'fa-chevron-up': submodule.modules && isModuleOpen(submodule.id), 'fa-chevron-down': submodule.modules && !isModuleOpen(submodule.id)}"></span></a>
+                        <ul class="nav child_menu" ng-if="::submodule.modules" ng-show="isModuleOpen(submodule.id)">
+                            <li ng-repeat="subsubmodule in submodule.modules" ng-if="user.check(subsubmodule.read)" ng-class="{sub_menu: true, active: isActive(subsubmodule)}">
+                                <a ng-href="{{moduleHref(subsubmodule)}}">{{::subsubmodule.label | translate}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

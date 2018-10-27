@@ -1,0 +1,9 @@
+<div class="profile">
+    <div class="profile_pic">
+        <img ng-src="https://www.gravatar.com/avatar/{{::user.getUser().gravatar}}?d=mm" class="img-circle profile_img">
+    </div>
+    <div class="profile_info">
+        <span translate="nav_quickinfo_welcome"></span>
+        <h2>{{::user.getUser().firstName}} {{::user.getUser().lastName}}</h2>
+    </div>
+</div>

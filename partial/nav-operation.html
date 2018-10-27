@@ -1,0 +1,6 @@
+<ul class="page-options list-inline" ng-controller="Navigation" show="user.isConnected() && $state.current.data.operations">
+    <li ng-repeat="operation in $state.current.data.operations">
+        <a ng-if="user.check(operation.read) && !operation.link" ng-href="{{moduleHref(operation)}}">{{::(operation.label || $state.get(operation.id).data.label) | translate}}</a>
+        <a ng-if="user.check(operation.read) && operation.link" ng-click="operation.link()">{{::(operation.label || $state.get(operation.id).data.label) | translate}}</a>
+    </li>
+</ul>

@@ -1,0 +1,9 @@
+<a href="javascript:;" class="user-profile dropdown-toggle navbar-item" data-toggle="dropdown" aria-expanded="false">
+    <img ng-src="https://www.gravatar.com/avatar/{{::user.getUser().gravatar}}?d=mm">
+    {{::user.getUser().firstName}} {{::user.getUser().lastName}}
+    <span class="fas fa-angle-down"></span>
+</a>
+<ul class="dropdown-menu dropdown-usermenu pull-right">
+    <li><a ui-sref="root.index.setting" ng-if="user.check('USER_SETTING')">{{'menu_setting' | translate}}</a></li>
+    <li><a ng-click="submitLogout()"><i class="fas fa-sign-out pull-right"></i> {{'menu_logout' | translate}}</a></li>
+</ul>
